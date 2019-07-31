@@ -6,38 +6,6 @@ var wins = 0;
 var losses = 0;
 var guessesLeft = 9;
 
-
-
-
-function populateUnderScore(hangmanWord){
-    if (hangmanWord === "OUTLAW"){
-        randomWordText === ["_ " + "_ " + "_ " + "_ " + "_ " + "_ " + "_ " + "_"];
-        return 
-    }
-
-    if( hangmanWord ==="REVOLVER"){
-        randomWordText === ["_ " + "_ " + "_ " + "_ " + "_ " + "_ " + "_ " + "_"];
-        return
-    }
-
-    if (hangmanWord === "SALOON"){
-        randomWordText === ["_ " + "_ " + "_ " + "_ " + "_ " + "_"]
-    }
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
 //empty array that will be populated for guesses user has made. will need to be populated and reset
 var guessesSoFar =[];
 
@@ -48,17 +16,17 @@ var winsText = document.getElementById("wins-text");
 var lossesText = document.getElementById("losses-text");
 var guessesText = document.getElementById("guesses-made-text");
 
-
+ //computer randomly selects a number. number refers to the array with letters of alphabet to select a letter.
 var computerLetter = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-//runs when user presses a key
 
+//runs when user presses a key
 document.onkeyup = function(event){
-    //computer randomly selects a number. number refers to the array with letters of alphabet to select a letter.
     
     
     //user's guess is the key that is pressed
     var userGuess = event.key
 
+    //this function resets the guesses and the array showing which guesses had been made.
     function reset(){
         guessesSoFar = []
         guessesLeft = 9;
